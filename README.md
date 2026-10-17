@@ -1,5 +1,13 @@
 # age-credential-vault
 
+**What it is:** A password-gated secret store that decrypts only into RAM, never to disk.
+**Why it existed:** Credentials for a live multi-service self-hosted stack were sitting in plaintext notes; needed real encryption at rest without standing up infrastructure for infrastructure's sake.
+**What I owned:** Full design and build, plus a later full-vault audit that caught a systemic migration defect across dozens of secrets.
+**Stack:** Bash, [age](https://github.com/FiloSottile/age), jq, macOS RAM disks.
+**Production status:** Running in production for months, securing dozens of live credentials.
+
+---
+
 A password-gated, RAM-only-decrypted secret store for small, self-hosted
 infrastructure — built to replace credentials sitting in plaintext
 config/notes files with something that's encrypted at rest, requires a
